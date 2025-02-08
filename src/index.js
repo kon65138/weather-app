@@ -8,6 +8,7 @@ async function fetchWeatherData(location = 'london', unitGroup = 'uk') {
     const weatherData = await response.json();
     const processedWeatherData = processWeatherData(weatherData);
     console.log(processedWeatherData);
+    console.log(weatherData);
   } catch (error) {
     console.error(error);
   }
@@ -22,6 +23,7 @@ function processWeatherData(weatherData) {
   const conditions = weatherData.currentConditions.conditions;
   const description = weatherData.description;
   const windspeed = weatherData.currentConditions.windspeed;
+  const precipitation = weatherData.currentConditions.precipprob;
 
   return {
     address: resolvedAddress,
@@ -32,7 +34,8 @@ function processWeatherData(weatherData) {
     currentCondition: conditions,
     overallDesciption: description,
     currentWindSpeed: windspeed,
+    precipitationProbability: precipitation,
   };
 }
 
-fetchWeatherData('wokingham');
+fetchWeatherData('afghanistan');
