@@ -23,16 +23,16 @@ function processWeatherData(weatherData) {
   const description = weatherData.description;
   const windspeed = weatherData.currentConditions.windspeed;
 
-  return [
-    resolvedAddress,
-    temperature,
-    time,
-    humidity,
-    icon,
-    conditions,
-    description,
-    windspeed,
-  ];
+  return {
+    address: resolvedAddress,
+    temp: temperature,
+    currentTime: time,
+    currentHumidity: humidity,
+    weatherIcon: icon,
+    currentCondition: conditions,
+    overallDesciption: description,
+    currentWindSpeed: windspeed,
+  };
 }
 
 fetchWeatherData('wokingham');
