@@ -1,4 +1,3 @@
-import { hu } from 'date-fns/locale';
 import './style.css';
 
 async function fetchWeatherData(location = 'london', unitGroup = 'uk') {
