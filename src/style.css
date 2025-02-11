@@ -129,3 +129,8 @@ body {
     min-width: 30rem;
 }
 
+.loading {
+    display: none;
+    font-size: 7rem;
+}
+

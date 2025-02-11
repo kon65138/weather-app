@@ -48,17 +48,24 @@ const iconSvgs = new Map([
 ]);
 
 const searchBtn = document.getElementById('searchBtn');
+const loadingDiv = document.querySelector('.loading');
+const weatherContentDiv = document.querySelector('.weatherContent');
 
 searchBtn.addEventListener('click', () => {
   const searchInput = document.getElementById('search');
   const searchValue = searchInput.value;
-  fetchWeatherData(searchValue);
+  fetchWeatherData(searchValue).then(() => {
+    loadingDiv.style.display = 'none';
+  });
+  loadingDiv.style.display = 'flex';
+  weatherContentDiv.style.display = 'none';
 });
 
 async function fetchWeatherData(location = 'london', unitGroup = 'uk') {
   try {
     const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=${unitGroup}&key=PT7JZF8VMTU9ZYHQWDWUQX3QS`;
     const response = await fetch(url, { mode: 'cors' });
+    console.log(response);
     if (!response.ok) {
       if (response.status === 400) {
         throw new Error('invalid request (no location found)');
@@ -118,7 +125,6 @@ function updateHtml(data) {
   const windspeed = document.querySelector('.windspeed .value');
   const precipitation = document.querySelector('.precipitation .value');
   const description = document.querySelector('.generalOverview');
-  const weatherContentDiv = document.querySelector('.weatherContent');
 
   location.textContent = data.address;
   time.textContent = `time of report: ${data.currentTime} (local time)`;
