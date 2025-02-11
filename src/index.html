@@ -6,25 +6,35 @@
     </head>
     <body>
         <div class="title">weather search</div>
-        <div class="searchDiv">
+        <form id="searchForm" onsubmit="event.preventDefault()">
             <input type="text" id="search" placeholder="enter a location">
-            <button id="searchBtn">search</button>
+            <button id="searchBtn" type="submit">search</button>
+        </form>
+        <span class="error"></span>
+        <div class="weatherContent">
+            <div class="location">London, England, United Kingdom</div>
+            <div class="time">19:05</div>
+            <div class="icon">
+                <img id="iconSvg" src="" alt="">
+            </div>
+            <div class="temp">5c</div>
+            <div class="conditions">it is snowy and windy</div>
+            <div class="info">
+                <div class="humidity">
+                    <div>humidity:</div>
+                    <div class="value">96%</div>
+                </div>
+                <div class="windspeed">
+                    <div>windspeed:</div>
+                    <div class="value">3.4mph</div>
+                </div>
+                <div class="precipitation">
+                    <div>precipitation prob:</div>
+                    <div class="value">96%</div>
+                </div>
+            </div>
+            <div class="generalOverview">weather will be cold and windy with some snow for next couple days</div>
         </div>
-        <div class="location">London, England, United Kingdom</div>
-        <div class="time">19:05</div>
-        <div class="icon">
-            <img src="" alt="">
-        </div>
-        <div class="temp">5c</div>
-        <div class="conditions">it is snowy and windy</div>
-        <div class="info">
-            <div class="humidity"><div>humidity:</div><div>96%</div></div>
-            <div class="windspeed"><div>windspeed:</div><div>3.4mph</div></div>
-            <div class="precipitation"><div>precipitation prob:</div><div>96%</div></div>
-        </div>
-        <div class="generalOverview">weather will be cold and windy with some snow for next couple days</div>
-            
-
     </body>
     
 </html>

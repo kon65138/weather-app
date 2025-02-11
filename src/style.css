@@ -17,6 +17,13 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.weatherContent {
+    min-width: 30rem;
+    display: none;
+    flex-direction: column;
+    align-items: center;
     gap: 1rem;
 }
 
@@ -26,7 +33,7 @@ body {
     font-size: 2rem;
 }
 
-.searchDiv {
+#searchForm {
     margin-top: 2vh;
     display: flex;
     justify-content: center;
@@ -56,8 +63,13 @@ body {
     outline: 2px solid rgba(0, 0, 0, 0.39);
 }
 
+.error {
+    color: red;
+    margin-top: 5px;
+}
+
 .location {
-    margin-top: 4vh;
+    margin-top: 5vh;
     font-size: 3rem;
 }
 
@@ -69,9 +81,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 25vh;
-    width: 100vw;
+    max-height: 25vh;
+    max-width: 100vw;
+}
 
+#iconSvg {
+    height: 100%;
+    width: 100%;
 }
 
 .temp {
