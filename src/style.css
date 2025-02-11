@@ -3,7 +3,13 @@
     font-family: sans-serif;
 }
 
+html {
+    height: 100%;
+}
+
 body {
+    min-width: 30rem;
+    height: 100%;
     background-color: rgb(172, 172, 230);
     padding: 0;
     margin: 0;
@@ -14,8 +20,35 @@ body {
     gap: 1rem;
 }
 
+.title {
+    text-align: center;
+    width: 100%;
+    font-size: 2rem;
+}
+
+.searchDiv {
+    margin-top: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#search {
+    min-width: 22rem;
+    background-color: rgba(0, 0, 0, 0.11);
+    height: 2rem;
+    border-radius: 20px;
+    width: 50vw;
+    padding: 0 1rem 0 1rem;
+    font-size: 1.3rem;
+}
+
+#search:focus {
+    outline: 2px solid rgba(0, 0, 0, 0.39);
+}
+
 .location {
-    margin-top: 10vh;
+    margin-top: 4vh;
     font-size: 3rem;
 }
 
@@ -25,7 +58,7 @@ body {
 
 .icon {
     height: 25vh;
-    width: 20vw;
+    width: 100vw;
     border: 2px black solid;
 }
 
@@ -38,10 +71,11 @@ body {
 }
 
 .info {
+    gap: 2rem;
     display: flex;
-    width: 30vw;
+    width: 70vw;
     height: 8vh;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .humidity , .windspeed, .precipitation {
@@ -49,7 +83,8 @@ body {
     background-color: rgba(18, 18, 82, 0.171);
     display: flex;
     border-radius: 10px;
-    width: 8vw;
+    width: fit-content;
+    padding: 5px;
     align-items: center;
     justify-content: center;
     height: 100%;
@@ -59,5 +94,10 @@ body {
 
 .generalOverview {
     font-size: 1.2rem;
+}
+
+.location, .time, .icon, .temp, .conditions, .info , .generalOverview {
+    text-align: center;
+    min-width: 30rem;
 }
 
