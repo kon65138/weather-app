@@ -65,7 +65,6 @@ async function fetchWeatherData(location = 'london', unitGroup = 'uk') {
   try {
     const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=${unitGroup}&key=PT7JZF8VMTU9ZYHQWDWUQX3QS`;
     const response = await fetch(url, { mode: 'cors' });
-    console.log(response);
     if (!response.ok) {
       if (response.status === 400) {
         throw new Error('invalid request (no location found)');
